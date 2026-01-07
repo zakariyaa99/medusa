@@ -1,0 +1,6500 @@
+{
+	"id": 64422,
+	"name": "module-events",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 64536,
+			"name": "Cart",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64423,
+					"name": "CartWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Cart"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 5,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L5"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64424,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64425,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a cart is created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the cart\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "cart.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createCartWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 16,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L16"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"cart.created\""
+								},
+								{
+									"id": 64426,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a cart's details are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the cart\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "cart.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateLineItemInCartWorkflow, updateCartWorkflow, addToCartWorkflow, addShippingMethodToCartWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 27,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L27"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"cart.updated\""
+								},
+								{
+									"id": 64427,
+									"name": "CUSTOMER_UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when the customer in the cart is updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the cart\n}\n```"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 38,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L38"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"cart.customer_updated\""
+								},
+								{
+									"id": 64428,
+									"name": "REGION_UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when the cart's region is updated. This\nevent is emitted alongside the "
+											},
+											{
+												"kind": "code",
+												"text": "`cart.updated`"
+											},
+											{
+												"kind": "text",
+												"text": " event."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the cart\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "cart.region_updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateCartWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 50,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L50"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"cart.region_updated\""
+								},
+								{
+									"id": 64429,
+									"name": "CUSTOMER_TRANSFERRED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when the customer in the cart is transferred."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.8.0"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the cart\n  customer_id, // The ID of the customer\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "cart.customer_transferred"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "transferCartCustomerWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 65,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L65"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"cart.customer_transferred\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64425,
+										64426,
+										64427,
+										64428,
+										64429
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 5,
+									"character": 34,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L5"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64423
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Cart",
+					"children": [
+						64423
+					]
+				}
+			]
+		},
+		{
+			"id": 64537,
+			"name": "Customer",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64430,
+					"name": "CustomerWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Customer"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 72,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L72"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64431,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64432,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a customer is created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the customer\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "customer.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createCustomersWorkflow, createCustomerAccountWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 83,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L83"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"customer.created\""
+								},
+								{
+									"id": 64433,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a customer is updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the customer\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "customer.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateCustomersWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 94,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L94"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"customer.updated\""
+								},
+								{
+									"id": 64434,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a customer is deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the customer\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "customer.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteCustomersWorkflow, removeCustomerAccountWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 105,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L105"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"customer.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64432,
+										64433,
+										64434
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 72,
+									"character": 38,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L72"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64430
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Customer",
+					"children": [
+						64430
+					]
+				}
+			]
+		},
+		{
+			"id": 64538,
+			"name": "Order",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64435,
+					"name": "OrderWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Order"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 112,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L112"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64436,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64437,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when the details of an order or draft order is updated. This\ndoesn't include updates made by an edit."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the order\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateOrderWorkflow, updateDraftOrderWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 124,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L124"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.updated\""
+								},
+								{
+									"id": 64438,
+									"name": "PLACED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an order is placed, or when a draft order is converted to an\norder."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the order\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.placed"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "convertDraftOrderWorkflow, completeCartWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 137,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L137"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.placed\""
+								},
+								{
+									"id": 64439,
+									"name": "CANCELED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an order is canceld."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the order\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.canceled"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "cancelOrderWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 148,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L148"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.canceled\""
+								},
+								{
+									"id": 64440,
+									"name": "COMPLETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when orders are completed."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the order\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.completed"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "completeOrderWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 159,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L159"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.completed\""
+								},
+								{
+									"id": 64441,
+									"name": "ARCHIVED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an order is archived."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the order\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.archived"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "archiveOrderWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 170,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L170"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.archived\""
+								},
+								{
+									"id": 64442,
+									"name": "FULFILLMENT_CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a fulfillment is created for an order."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  order_id, // The ID of the order\n  fulfillment_id, // The ID of the fulfillment\n  no_notification, // (boolean) Whether to notify the customer\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.fulfillment_created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createOrderFulfillmentWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 184,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L184"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.fulfillment_created\""
+								},
+								{
+									"id": 64443,
+									"name": "FULFILLMENT_CANCELED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an order's fulfillment is canceled."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  order_id, // The ID of the order\n  fulfillment_id, // The ID of the fulfillment\n  no_notification, // (boolean) Whether to notify the customer\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.fulfillment_canceled"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "cancelOrderFulfillmentWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 197,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L197"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.fulfillment_canceled\""
+								},
+								{
+									"id": 64444,
+									"name": "RETURN_REQUESTED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a return request is confirmed."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  order_id, // The ID of the order\n  return_id, // The ID of the return\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.return_requested"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createAndCompleteReturnOrderWorkflow, confirmReturnRequestWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 210,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L210"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.return_requested\""
+								},
+								{
+									"id": 64445,
+									"name": "RETURN_RECEIVED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a return is marked as received."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  order_id, // The ID of the order\n  return_id, // The ID of the return\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.return_received"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createAndCompleteReturnOrderWorkflow, confirmReturnReceiveWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 222,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L222"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.return_received\""
+								},
+								{
+									"id": 64446,
+									"name": "CLAIM_CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a claim is created for an order."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  order_id, // The ID of the order\n  claim_id, // The ID of the claim\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.claim_created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "confirmClaimRequestWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 235,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L235"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.claim_created\""
+								},
+								{
+									"id": 64447,
+									"name": "EXCHANGE_CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an exchange is created for an order."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  order_id, // The ID of the order\n  exchange_id, // The ID of the exchange\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.exchange_created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "confirmExchangeRequestWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 247,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L247"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.exchange_created\""
+								},
+								{
+									"id": 64448,
+									"name": "TRANSFER_REQUESTED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an order is requested to be transferred to\nanother customer."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the order\n  order_change_id, // The ID of the order change created for the transfer\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order.transfer_requested"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "requestOrderTransferWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 261,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L261"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order.transfer_requested\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64437,
+										64438,
+										64439,
+										64440,
+										64441,
+										64442,
+										64443,
+										64444,
+										64445,
+										64446,
+										64447,
+										64448
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 112,
+									"character": 35,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L112"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64449,
+					"name": "OrderEditWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Order Edit"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 268,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L268"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64450,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64451,
+									"name": "REQUESTED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an order edit is requested."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.8.0"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  order_id, // The ID of the order\n  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order-edit.requested"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "requestOrderEditRequestWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 282,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L282"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order-edit.requested\""
+								},
+								{
+									"id": 64452,
+									"name": "CONFIRMED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an order edit request is confirmed."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.8.0"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  order_id, // The ID of the order\n  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order-edit.confirmed"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "confirmOrderEditRequestWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 296,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L296"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order-edit.confirmed\""
+								},
+								{
+									"id": 64453,
+									"name": "CANCELED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an order edit request is canceled."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.8.0"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  order_id, // The ID of the order\n  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "order-edit.canceled"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "cancelBeginOrderEditWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 310,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L310"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"order-edit.canceled\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64451,
+										64452,
+										64453
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 268,
+									"character": 39,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L268"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64435,
+						64449
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Order",
+					"children": [
+						64435
+					]
+				},
+				{
+					"title": "Order Edit",
+					"children": [
+						64449
+					]
+				}
+			]
+		},
+		{
+			"id": 64539,
+			"name": "User",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64454,
+					"name": "UserWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "User"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 317,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L317"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64455,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64456,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when users are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the user\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "user.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createUsersWorkflow, createUserAccountWorkflow, acceptInviteWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 328,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L328"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"user.created\""
+								},
+								{
+									"id": 64457,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when users are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the user\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "user.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateUsersWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 339,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L339"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"user.updated\""
+								},
+								{
+									"id": 64458,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when users are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the user\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "user.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteUsersWorkflow, removeUserAccountWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 350,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L350"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"user.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64456,
+										64457,
+										64458
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 317,
+									"character": 34,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L317"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64502,
+					"name": "InviteWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Invite"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 699,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L699"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64503,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64504,
+									"name": "ACCEPTED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when an invite is accepted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the invite\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "invite.accepted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "acceptInviteWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 710,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L710"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"invite.accepted\""
+								},
+								{
+									"id": 64505,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when invites are created. You can listen to this event\nto send an email to the invited users, for example."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the invite\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "invite.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createInvitesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 722,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L722"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"invite.created\""
+								},
+								{
+									"id": 64506,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when invites are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the invite\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "invite.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteInvitesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 733,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L733"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"invite.deleted\""
+								},
+								{
+									"id": 64507,
+									"name": "RESENT",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when invites should be resent because their token was\nrefreshed. You can listen to this event to send an email to the invited users,\nfor example."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the invite\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "invite.resent"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "refreshInviteTokensWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 746,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L746"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"invite.resent\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64504,
+										64505,
+										64506,
+										64507
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 699,
+									"character": 36,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L699"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64454,
+						64502
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "User",
+					"children": [
+						64454
+					]
+				},
+				{
+					"title": "Invite",
+					"children": [
+						64502
+					]
+				}
+			]
+		},
+		{
+			"id": 64540,
+			"name": "Auth",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64459,
+					"name": "AuthWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Auth"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 357,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L357"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64460,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64461,
+									"name": "PASSWORD_RESET",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a reset password token is generated. You can listen to this event\nto send a reset password email to the user or customer, for example."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  entity_id, // The identifier of the user or customer. For example, an email address.\n  actor_type, // The type of actor. For example, \"customer\", \"user\", or custom.\n  token, // The generated token.\n  metadata, // Optional custom metadata passed from the request.\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "auth.password_reset"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "generateResetPasswordTokenWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 372,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L372"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"auth.password_reset\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64461
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 357,
+									"character": 34,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L357"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64459
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Auth",
+					"children": [
+						64459
+					]
+				}
+			]
+		},
+		{
+			"id": 64541,
+			"name": "Sales Channel",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64462,
+					"name": "SalesChannelWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Sales Channel"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 379,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L379"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64463,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64464,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when sales channels are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the sales channel\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "sales-channel.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createSalesChannelsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 390,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L390"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"sales-channel.created\""
+								},
+								{
+									"id": 64465,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when sales channels are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the sales channel\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "sales-channel.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateSalesChannelsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 401,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L401"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"sales-channel.updated\""
+								},
+								{
+									"id": 64466,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when sales channels are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the sales channel\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "sales-channel.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteSalesChannelsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 412,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L412"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"sales-channel.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64464,
+										64465,
+										64466
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 379,
+									"character": 42,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L379"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64462
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Sales Channel",
+					"children": [
+						64462
+					]
+				}
+			]
+		},
+		{
+			"id": 64542,
+			"name": "Product",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64467,
+					"name": "ProductCategoryWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Product Category"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 419,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L419"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64468,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64469,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product categories are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product category\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-category.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createProductCategoriesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 430,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L430"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-category.created\""
+								},
+								{
+									"id": 64470,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product categories are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product category\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-category.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateProductCategoriesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 441,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L441"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-category.updated\""
+								},
+								{
+									"id": 64471,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product categories are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product category\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-category.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteProductCategoriesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 452,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L452"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-category.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64469,
+										64470,
+										64471
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 419,
+									"character": 45,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L419"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64472,
+					"name": "ProductCollectionWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Product Collection"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 459,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L459"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64473,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64474,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product collections are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product collection\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-collection.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createCollectionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 470,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L470"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-collection.created\""
+								},
+								{
+									"id": 64475,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product collections are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product collection\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-collection.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateCollectionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 481,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L481"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-collection.updated\""
+								},
+								{
+									"id": 64476,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product collections are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product collection\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-collection.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteCollectionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 492,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L492"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-collection.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64474,
+										64475,
+										64476
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 459,
+									"character": 47,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L459"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64477,
+					"name": "ProductVariantWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Product Variant"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 499,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L499"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64478,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64479,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product variants are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product variant\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-variant.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateProductVariantsWorkflow, batchProductVariantsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 510,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L510"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-variant.updated\""
+								},
+								{
+									"id": 64480,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product variants are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product variant\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-variant.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createProductVariantsWorkflow, createProductsWorkflow, batchProductVariantsWorkflow, batchProductsWorkflow, importProductsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 521,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L521"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-variant.created\""
+								},
+								{
+									"id": 64481,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product variants are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product variant\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-variant.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteProductVariantsWorkflow, batchProductVariantsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 532,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L532"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-variant.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64479,
+										64480,
+										64481
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 499,
+									"character": 44,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L499"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64482,
+					"name": "ProductWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Product"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 539,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L539"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64483,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64484,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when products are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateProductsWorkflow, batchProductsWorkflow, importProductsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 550,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L550"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product.updated\""
+								},
+								{
+									"id": 64485,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when products are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createProductsWorkflow, batchProductsWorkflow, importProductsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 561,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L561"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product.created\""
+								},
+								{
+									"id": 64486,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when products are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteProductsWorkflow, batchProductsWorkflow, importProductsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 572,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L572"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64484,
+										64485,
+										64486
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 539,
+									"character": 37,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L539"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64487,
+					"name": "ProductTypeWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Product Type"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 579,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L579"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64488,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64489,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product types are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product type\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-type.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateProductTypesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 590,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L590"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-type.updated\""
+								},
+								{
+									"id": 64490,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product types are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product type\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-type.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createProductTypesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 601,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L601"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-type.created\""
+								},
+								{
+									"id": 64491,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product types are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product type\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-type.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteProductTypesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 612,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L612"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-type.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64489,
+										64490,
+										64491
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 579,
+									"character": 41,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L579"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64492,
+					"name": "ProductTagWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Product Tag"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 619,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L619"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64493,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64494,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product tags are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product tag\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-tag.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateProductTagsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 630,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L630"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-tag.updated\""
+								},
+								{
+									"id": 64495,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product tags are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product tag\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-tag.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createProductTagsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 641,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L641"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-tag.created\""
+								},
+								{
+									"id": 64496,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product tags are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product tag\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-tag.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteProductTagsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 652,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L652"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-tag.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64494,
+										64495,
+										64496
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 619,
+									"character": 40,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L619"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64497,
+					"name": "ProductOptionWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Product Option"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 659,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L659"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64498,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64499,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product options are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product option\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-option.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateProductOptionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 670,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L670"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-option.updated\""
+								},
+								{
+									"id": 64500,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product options are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product option\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-option.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createProductOptionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 681,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L681"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-option.created\""
+								},
+								{
+									"id": 64501,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when product options are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the product option\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "product-option.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteProductOptionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 692,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L692"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"product-option.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64499,
+										64500,
+										64501
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 659,
+									"character": 43,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L659"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64467,
+						64472,
+						64477,
+						64482,
+						64487,
+						64492,
+						64497
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Product Category",
+					"children": [
+						64467
+					]
+				},
+				{
+					"title": "Product Collection",
+					"children": [
+						64472
+					]
+				},
+				{
+					"title": "Product Variant",
+					"children": [
+						64477
+					]
+				},
+				{
+					"title": "Product",
+					"children": [
+						64482
+					]
+				},
+				{
+					"title": "Product Type",
+					"children": [
+						64487
+					]
+				},
+				{
+					"title": "Product Tag",
+					"children": [
+						64492
+					]
+				},
+				{
+					"title": "Product Option",
+					"children": [
+						64497
+					]
+				}
+			]
+		},
+		{
+			"id": 64543,
+			"name": "Region",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64508,
+					"name": "RegionWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Region"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 753,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L753"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64509,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64510,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when regions are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the region\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "region.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateRegionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 764,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L764"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"region.updated\""
+								},
+								{
+									"id": 64511,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when regions are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the region\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "region.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createRegionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 775,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L775"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"region.created\""
+								},
+								{
+									"id": 64512,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when regions are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the region\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "region.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteRegionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 786,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L786"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"region.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64510,
+										64511,
+										64512
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 753,
+									"character": 36,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L753"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64508
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Region",
+					"children": [
+						64508
+					]
+				}
+			]
+		},
+		{
+			"id": 64544,
+			"name": "Fulfillment",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64513,
+					"name": "FulfillmentWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Fulfillment"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 793,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L793"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64514,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64515,
+									"name": "SHIPMENT_CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a shipment is created for an order."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // the ID of the fulfillment\n  no_notification, // (boolean) whether to notify the customer\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "shipment.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createOrderShipmentWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 805,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L805"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"shipment.created\""
+								},
+								{
+									"id": 64516,
+									"name": "DELIVERY_CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a fulfillment is marked as delivered."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // the ID of the fulfillment\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "delivery.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "markOrderFulfillmentAsDeliveredWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 816,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L816"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"delivery.created\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64515,
+										64516
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 793,
+									"character": 41,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L793"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64517,
+					"name": "ShippingOptionTypeWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Shipping Option Type"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 823,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L823"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64518,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64519,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when shipping option types are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.10.0"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the shipping option type\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "shipping-option-type.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateShippingOptionTypesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 836,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L836"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"shipping-option-type.updated\""
+								},
+								{
+									"id": 64520,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when shipping option types are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.10.0"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the shipping option type\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "shipping-option-type.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createShippingOptionTypesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 849,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L849"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"shipping-option-type.created\""
+								},
+								{
+									"id": 64521,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when shipping option types are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.10.0"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the shipping option type\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "shipping-option-type.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteShippingOptionTypesWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 862,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L862"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"shipping-option-type.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64519,
+										64520,
+										64521
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 823,
+									"character": 48,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L823"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 64522,
+					"name": "ShippingOptionWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Shipping Option"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 869,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L869"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64523,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64524,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when shipping options are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.12.4"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the shipping option\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "shipping-option.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createShippingOptionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 882,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L882"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"shipping-option.created\""
+								},
+								{
+									"id": 64525,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when shipping options are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.12.4"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the shipping option\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "shipping-option.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateShippingOptionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 895,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L895"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"shipping-option.updated\""
+								},
+								{
+									"id": 64526,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when shipping options are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.12.4"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the shipping option\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "shipping-option.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteShippingOptionsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 908,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L908"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"shipping-option.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64524,
+										64525,
+										64526
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 869,
+									"character": 44,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L869"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64513,
+						64517,
+						64522
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Fulfillment",
+					"children": [
+						64513
+					]
+				},
+				{
+					"title": "Shipping Option Type",
+					"children": [
+						64517
+					]
+				},
+				{
+					"title": "Shipping Option",
+					"children": [
+						64522
+					]
+				}
+			]
+		},
+		{
+			"id": 64545,
+			"name": "Payment",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64527,
+					"name": "PaymentEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Payment"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 915,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L915"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64528,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64529,
+									"name": "CAPTURED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a payment is captured."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // the ID of the payment\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "payment.captured"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "capturePaymentWorkflow, processPaymentWorkflow, markPaymentCollectionAsPaid"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 926,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L926"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"payment.captured\""
+								},
+								{
+									"id": 64530,
+									"name": "REFUNDED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when a payment is refunded."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // the ID of the payment\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "payment.refunded"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "refundPaymentWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 937,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L937"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"payment.refunded\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64529,
+										64530
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 915,
+									"character": 29,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L915"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64527
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Payment",
+					"children": [
+						64527
+					]
+				}
+			]
+		},
+		{
+			"id": 64546,
+			"name": "Translation",
+			"variant": "declaration",
+			"kind": 4,
+			"flags": {},
+			"children": [
+				{
+					"id": 64531,
+					"name": "TranslationWorkflowEvents",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@category",
+								"content": [
+									{
+										"kind": "text",
+										"text": "Translation"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "events.ts",
+							"line": 944,
+							"character": 13,
+							"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L944"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 64532,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"children": [
+								{
+									"id": 64533,
+									"name": "CREATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when translations are created."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.12.3"
+													}
+												]
+											},
+											{
+												"tag": "@featureFlag",
+												"content": [
+													{
+														"kind": "text",
+														"text": "translation"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the translation\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "translation.created"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "createTranslationsWorkflow, batchTranslationsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 957,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L957"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"translation.created\""
+								},
+								{
+									"id": 64534,
+									"name": "UPDATED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when translations are updated."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.12.3"
+													}
+												]
+											},
+											{
+												"tag": "@featureFlag",
+												"content": [
+													{
+														"kind": "text",
+														"text": "translation"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the translation\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "translation.updated"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "updateTranslationsWorkflow, batchTranslationsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 970,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L970"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"translation.updated\""
+								},
+								{
+									"id": 64535,
+									"name": "DELETED",
+									"variant": "declaration",
+									"kind": 1024,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Emitted when translations are deleted."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@since",
+												"content": [
+													{
+														"kind": "text",
+														"text": "2.12.3"
+													}
+												]
+											},
+											{
+												"tag": "@featureFlag",
+												"content": [
+													{
+														"kind": "text",
+														"text": "translation"
+													}
+												]
+											},
+											{
+												"tag": "@eventPayload",
+												"content": [
+													{
+														"kind": "code",
+														"text": "```ts\n{\n  id, // The ID of the translation\n}\n```"
+													}
+												]
+											},
+											{
+												"tag": "@eventName",
+												"content": [
+													{
+														"kind": "code",
+														"text": "translation.deleted"
+													}
+												]
+											},
+											{
+												"tag": "@workflows",
+												"content": [
+													{
+														"kind": "text",
+														"text": "deleteTranslationsWorkflow, batchTranslationsWorkflow"
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "events.ts",
+											"line": 983,
+											"character": 2,
+											"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L983"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"translation.deleted\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										64533,
+										64534,
+										64535
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "events.ts",
+									"line": 944,
+									"character": 41,
+									"url": "https://github.com/medusajs/medusa/blob/a960fb75c9f662372fd5cd623f883f9d6d8ad473/packages/core/utils/src/core-flows/events.ts#L944"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"children": [
+						64531
+					]
+				}
+			],
+			"categories": [
+				{
+					"title": "Translation",
+					"children": [
+						64531
+					]
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Namespaces",
+			"children": [
+				64536,
+				64537,
+				64538,
+				64539,
+				64540,
+				64541,
+				64542,
+				64543,
+				64544,
+				64545,
+				64546
+			]
+		},
+		{
+			"title": "Variables",
+			"children": [
+				64423,
+				64430,
+				64435,
+				64449,
+				64454,
+				64459,
+				64462,
+				64467,
+				64472,
+				64477,
+				64482,
+				64487,
+				64492,
+				64497,
+				64502,
+				64508,
+				64513,
+				64517,
+				64522,
+				64527,
+				64531
+			]
+		}
+	],
+	"categories": [
+		{
+			"title": "Auth",
+			"children": [
+				64459
+			]
+		},
+		{
+			"title": "Cart",
+			"children": [
+				64423
+			]
+		},
+		{
+			"title": "Customer",
+			"children": [
+				64430
+			]
+		},
+		{
+			"title": "Fulfillment",
+			"children": [
+				64513
+			]
+		},
+		{
+			"title": "Invite",
+			"children": [
+				64502
+			]
+		},
+		{
+			"title": "Order",
+			"children": [
+				64435
+			]
+		},
+		{
+			"title": "Order Edit",
+			"children": [
+				64449
+			]
+		},
+		{
+			"title": "Other",
+			"children": [
+				64536,
+				64537,
+				64538,
+				64539,
+				64540,
+				64541,
+				64542,
+				64543,
+				64544,
+				64545,
+				64546
+			]
+		},
+		{
+			"title": "Payment",
+			"children": [
+				64527
+			]
+		},
+		{
+			"title": "Product",
+			"children": [
+				64482
+			]
+		},
+		{
+			"title": "Product Category",
+			"children": [
+				64467
+			]
+		},
+		{
+			"title": "Product Collection",
+			"children": [
+				64472
+			]
+		},
+		{
+			"title": "Product Option",
+			"children": [
+				64497
+			]
+		},
+		{
+			"title": "Product Tag",
+			"children": [
+				64492
+			]
+		},
+		{
+			"title": "Product Type",
+			"children": [
+				64487
+			]
+		},
+		{
+			"title": "Product Variant",
+			"children": [
+				64477
+			]
+		},
+		{
+			"title": "Region",
+			"children": [
+				64508
+			]
+		},
+		{
+			"title": "Sales Channel",
+			"children": [
+				64462
+			]
+		},
+		{
+			"title": "Shipping Option",
+			"children": [
+				64522
+			]
+		},
+		{
+			"title": "Shipping Option Type",
+			"children": [
+				64517
+			]
+		},
+		{
+			"title": "Translation",
+			"children": [
+				64531
+			]
+		},
+		{
+			"title": "User",
+			"children": [
+				64454
+			]
+		}
+	],
+	"packageName": "@medusajs/utils",
+	"symbolIdMap": {
+		"64422": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": ""
+		},
+		"64423": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "CartWorkflowEvents"
+		},
+		"64424": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64425": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64426": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64427": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CUSTOMER_UPDATED"
+		},
+		"64428": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.REGION_UPDATED"
+		},
+		"64429": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CUSTOMER_TRANSFERRED"
+		},
+		"64430": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "CustomerWorkflowEvents"
+		},
+		"64431": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64432": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64433": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64434": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64435": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "OrderWorkflowEvents"
+		},
+		"64436": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64437": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64438": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.PLACED"
+		},
+		"64439": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CANCELED"
+		},
+		"64440": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.COMPLETED"
+		},
+		"64441": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.ARCHIVED"
+		},
+		"64442": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.FULFILLMENT_CREATED"
+		},
+		"64443": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.FULFILLMENT_CANCELED"
+		},
+		"64444": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.RETURN_REQUESTED"
+		},
+		"64445": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.RETURN_RECEIVED"
+		},
+		"64446": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CLAIM_CREATED"
+		},
+		"64447": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.EXCHANGE_CREATED"
+		},
+		"64448": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.TRANSFER_REQUESTED"
+		},
+		"64449": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "OrderEditWorkflowEvents"
+		},
+		"64450": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64451": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.REQUESTED"
+		},
+		"64452": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CONFIRMED"
+		},
+		"64453": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CANCELED"
+		},
+		"64454": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "UserWorkflowEvents"
+		},
+		"64455": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64456": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64457": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64458": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64459": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "AuthWorkflowEvents"
+		},
+		"64460": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64461": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.PASSWORD_RESET"
+		},
+		"64462": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "SalesChannelWorkflowEvents"
+		},
+		"64463": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64464": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64465": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64466": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64467": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "ProductCategoryWorkflowEvents"
+		},
+		"64468": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64469": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64470": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64471": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64472": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "ProductCollectionWorkflowEvents"
+		},
+		"64473": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64474": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64475": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64476": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64477": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "ProductVariantWorkflowEvents"
+		},
+		"64478": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64479": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64480": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64481": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64482": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "ProductWorkflowEvents"
+		},
+		"64483": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64484": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64485": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64486": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64487": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "ProductTypeWorkflowEvents"
+		},
+		"64488": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64489": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64490": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64491": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64492": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "ProductTagWorkflowEvents"
+		},
+		"64493": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64494": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64495": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64496": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64497": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "ProductOptionWorkflowEvents"
+		},
+		"64498": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64499": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64500": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64501": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64502": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "InviteWorkflowEvents"
+		},
+		"64503": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64504": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.ACCEPTED"
+		},
+		"64505": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64506": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64507": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.RESENT"
+		},
+		"64508": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "RegionWorkflowEvents"
+		},
+		"64509": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64510": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64511": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64512": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64513": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "FulfillmentWorkflowEvents"
+		},
+		"64514": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64515": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.SHIPMENT_CREATED"
+		},
+		"64516": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELIVERY_CREATED"
+		},
+		"64517": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "ShippingOptionTypeWorkflowEvents"
+		},
+		"64518": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64519": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64520": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64521": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64522": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "ShippingOptionWorkflowEvents"
+		},
+		"64523": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64524": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64525": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64526": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		},
+		"64527": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "PaymentEvents"
+		},
+		"64528": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64529": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CAPTURED"
+		},
+		"64530": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.REFUNDED"
+		},
+		"64531": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "TranslationWorkflowEvents"
+		},
+		"64532": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object"
+		},
+		"64533": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.CREATED"
+		},
+		"64534": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.UPDATED"
+		},
+		"64535": {
+			"sourceFileName": "../../../../packages/core/utils/src/core-flows/events.ts",
+			"qualifiedName": "__object.DELETED"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "../../../../packages/core/utils/src/core-flows/events.ts"
+		},
+		"reflections": {
+			"1": 64422
+		}
+	}
+}
