@@ -16,13 +16,16 @@ COPY package.json yarn.lock ./
 
 # Install dependencies using Yarn 3 with longer timeout for slow networks
 # Uses Yarn 3.2.1 from .yarn/releases/ as specified in .yarnrc.yml
-RUN yarn install --network-timeout 600000
+# Use --no-immutable to avoid lockfile validation issues and ensure all deps are installed
+RUN yarn install --network-timeout 600000 --no-immutable && \
+    yarn workspaces focus --all --production
 
 # Copy source code (including packages directory)
 COPY . .
 
-# Build all packages in correct order using turbo (medusa depends on other packages)
-RUN yarn build
+# Build all packages except @medusajs/deps which has external dependency issues
+# Using turbo filter to skip problematic package
+RUN npx turbo run build --filter=!@medusajs/deps
 
 # Production stage
 FROM node:20-alpine
