@@ -104,8 +104,8 @@ Karena kita memisahkan server dan worker, kita akan membuat **tiga services** di
 
 #### Service 1: Backend Server (HTTP API)
 - **Repository**: URL repository GitHub Anda
-- **Build Context**: `medusa-backend/packages/medusa`
-- **Dockerfile**: `Dockerfile` (otomatis terdeteksi)
+- **Build Context**: `medusa-backend`
+- **Dockerfile**: `packages/medusa/Dockerfile`
 - **Build Command**: (kosongkan, menggunakan Dockerfile)
 - **Start Command**: `node dist/app.js`
 - **Port**: 9000
@@ -113,8 +113,8 @@ Karena kita memisahkan server dan worker, kita akan membuat **tiga services** di
 
 #### Service 2: Backend Worker (Background Jobs)
 - **Repository**: URL repository GitHub yang sama
-- **Build Context**: `medusa-backend/packages/medusa`
-- **Dockerfile**: `Dockerfile` (otomatis terdeteksi)
+- **Build Context**: `medusa-backend`
+- **Dockerfile**: `packages/medusa/Dockerfile`
 - **Build Command**: (kosongkan, menggunakan Dockerfile)
 - **Start Command**: `node dist/app.js`
 - **Port**: Tidak perlu port publik (worker tidak menangani HTTP requests)
@@ -169,6 +169,34 @@ Atau tambahkan script startup di Dockerfile backend (opsional).
 - Periksa resource memory/CPU di Dokploy
 - Pastikan Dockerfile build context benar
 - Check logs build untuk detail error
+
+### Error ".yarn not found" saat build
+- Dockerfile sudah diperbaiki untuk menghindari error ini
+- Pastikan menggunakan versi terbaru dari repository
+- Error ini terjadi karena struktur monorepo Medusa
+- Solusi: Gunakan `--ignore-scripts` flag saat `yarn install`
+
+### Error "yarn.lock not found" atau "Yarn version mismatch"
+- **Penyebab**: Build context salah atau versi Yarn tidak cocok
+- **Solusi 1**: Pastikan build context `medusa-backend/` (bukan `medusa-backend/packages/medusa/`)
+- **Solusi 2**: Dockerfile sudah menggunakan Corepack untuk Yarn 3.2.1
+
+## Perbaikan Docker Build (Update Terbaru)
+Dockerfile telah diperbaiki untuk semua error build:
+
+### **Backend Dockerfile** (`medusa-backend/packages/medusa/Dockerfile`):
+1. **Corepack**: Mengaktifkan Corepack dan menggunakan Yarn 3.2.1
+2. **Build Context**: Dirancang untuk build context `medusa-backend/`
+3. **Install**: `yarn install --immutable --ignore-scripts`
+4. **Structure**: Mengakses yarn.lock dari root monorepo
+
+### **Frontend Dockerfile** (`medusa-frontend/Dockerfile`):
+1. **Corepack**: Juga menggunakan Corepack untuk Yarn 3.2.1
+2. **Install**: `yarn install --immutable --ignore-scripts`
+
+### **Konfigurasi Dokploy yang Benar:**
+- **Backend**: Build Context = `medusa-backend/`, Dockerfile = `packages/medusa/Dockerfile`
+- **Frontend**: Build Context = `medusa-frontend/`, Dockerfile = `Dockerfile`
 
 ## Development Lokal (Opsional)
 ```bash

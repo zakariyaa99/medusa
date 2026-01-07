@@ -1,14 +1,19 @@
 # Build stage
 FROM node:20-alpine AS builder
 
+# Enable Corepack for Yarn 3
+RUN corepack enable
+RUN corepack prepare yarn@3.2.1 --activate
+
 # Set working directory
 WORKDIR /app
 
 # Copy package files
 COPY package.json yarn.lock ./
 
-# Install dependencies with yarn (ignore scripts to avoid potential issues)
-RUN yarn install --frozen-lockfile --ignore-scripts
+# Install dependencies using Yarn 3
+# Use --immutable (equivalent to --frozen-lockfile) and --ignore-scripts
+RUN yarn install --immutable --ignore-scripts
 
 # Copy source code
 COPY . .

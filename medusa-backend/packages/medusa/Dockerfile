@@ -4,21 +4,25 @@ FROM node:20-alpine AS builder
 # Install necessary tools
 RUN apk add --no-cache git
 
+# Enable Corepack for Yarn 3
+RUN corepack enable
+RUN corepack prepare yarn@3.2.1 --activate
+
 # Set working directory
 WORKDIR /app
 
-# Copy package files from medusa package
+# Copy package files from monorepo root (build context is medusa-backend)
 COPY package.json yarn.lock ./
 
-# Install dependencies using yarn (comes with node image)
-# Use --ignore-scripts to avoid postinstall scripts that might require .yarn
-RUN yarn install --frozen-lockfile --ignore-scripts
+# Install dependencies using Yarn 3
+# Use --immutable (equivalent to --frozen-lockfile) and --ignore-scripts
+RUN yarn install --immutable --ignore-scripts
 
-# Copy source code
+# Copy source code (including packages directory)
 COPY . .
 
-# Build using yarn (script "build" from package.json)
-RUN yarn build
+# Build only the medusa package
+RUN cd packages/medusa && yarn build
 
 # Production stage
 FROM node:20-alpine
@@ -29,13 +33,13 @@ RUN apk add --no-cache dumb-init
 WORKDIR /app
 
 # Copy built artifacts and dependencies from builder
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./
+COPY --from=builder /app/packages/medusa/dist ./dist
+COPY --from=builder /app/packages/medusa/node_modules ./node_modules
+COPY --from=builder /app/packages/medusa/package.json ./
 
 # Copy necessary configuration files
-COPY --from=builder /app/medusa-config.js ./
-COPY --from=builder /app/ormconfig.json ./
+COPY --from=builder /app/packages/medusa/medusa-config.js ./
+COPY --from=builder /app/packages/medusa/ormconfig.json ./
 
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && \
