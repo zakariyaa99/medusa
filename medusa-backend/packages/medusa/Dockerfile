@@ -7,20 +7,17 @@ RUN apk add --no-cache git
 # Set working directory
 WORKDIR /app
 
-# Copy package files
+# Copy package files from medusa package
 COPY package.json yarn.lock ./
 
-# Copy workspace configuration
-COPY .yarnrc.yml ./
-COPY .yarn ./.yarn
-
-# Install dependencies
-RUN yarn install --frozen-lockfile
+# Install dependencies using yarn (comes with node image)
+# Use --ignore-scripts to avoid postinstall scripts that might require .yarn
+RUN yarn install --frozen-lockfile --ignore-scripts
 
 # Copy source code
 COPY . .
 
-# Build
+# Build using yarn (script "build" from package.json)
 RUN yarn build
 
 # Production stage
@@ -54,3 +51,4 @@ ENTRYPOINT ["dumb-init", "--"]
 
 # Start command
 CMD ["node", "dist/app.js"]
+

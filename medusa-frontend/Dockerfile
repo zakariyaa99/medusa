@@ -7,12 +7,8 @@ WORKDIR /app
 # Copy package files
 COPY package.json yarn.lock ./
 
-# Copy yarn configuration
-COPY .yarnrc.yml ./
-COPY .yarn ./.yarn
-
-# Install dependencies
-RUN yarn install --frozen-lockfile
+# Install dependencies with yarn (ignore scripts to avoid potential issues)
+RUN yarn install --frozen-lockfile --ignore-scripts
 
 # Copy source code
 COPY . .
@@ -50,3 +46,4 @@ ENTRYPOINT ["dumb-init", "--"]
 
 # Start command
 CMD ["yarn", "start"]
+
