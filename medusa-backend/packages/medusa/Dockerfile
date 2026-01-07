@@ -15,8 +15,8 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 
 # Install dependencies using Yarn 3
-# Use --immutable (equivalent to --frozen-lockfile) and --ignore-scripts
-RUN yarn install --immutable --ignore-scripts
+# Use --immutable (equivalent to --frozen-lockfile)
+RUN yarn install --immutable
 
 # Copy source code (including packages directory)
 COPY . .
