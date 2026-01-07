@@ -14,11 +14,9 @@ COPY .yarnrc.yml ./
 # Copy package files from monorepo root (build context is medusa-backend)
 COPY package.json yarn.lock ./
 
-# Install dependencies using Yarn 3 with longer timeout for slow networks
-# Uses Yarn 3.2.1 from .yarn/releases/ as specified in .yarnrc.yml
-# Use --no-immutable to avoid lockfile validation issues and ensure all deps are installed
-RUN yarn install --network-timeout 600000 --no-immutable && \
-    yarn workspaces focus --all --production
+# Install ALL dependencies (including dev dependencies needed for build)
+# Removed --production flag to keep rimraf, tsup, and other build tools
+RUN yarn install --network-timeout 600000 --no-immutable
 
 # Copy source code (including packages directory)
 COPY . .
