@@ -8,16 +8,11 @@ RUN corepack prepare yarn@3.2.1 --activate
 # Set working directory
 WORKDIR /app
 
-# Copy .yarn folder and config
-COPY .yarn ./.yarn
-COPY .yarnrc.yml ./
-
 # Copy package files
 COPY package.json yarn.lock ./
 
-# Install dependencies using Yarn 3
-# Use --immutable (equivalent to --frozen-lockfile)
-RUN yarn install --immutable
+# Install dependencies using Yarn 3 with longer timeout for slow networks
+RUN yarn install --network-timeout 600000
 
 # Copy source code
 COPY . .
@@ -55,4 +50,5 @@ ENTRYPOINT ["dumb-init", "--"]
 
 # Start command
 CMD ["yarn", "start"]
+
 
