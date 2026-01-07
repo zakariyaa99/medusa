@@ -4,18 +4,18 @@ FROM node:20-alpine AS builder
 # Install necessary tools
 RUN apk add --no-cache git
 
-# Enable Corepack for Yarn 3
-RUN corepack enable
-RUN corepack prepare yarn@3.2.1 --activate
-
 # Set working directory
 WORKDIR /app
+
+# Copy Yarn configuration and patches (required for yarn install)
+COPY .yarn ./.yarn
+COPY .yarnrc.yml ./
 
 # Copy package files from monorepo root (build context is medusa-backend)
 COPY package.json yarn.lock ./
 
 # Install dependencies using Yarn 3 with longer timeout for slow networks
-# Disable immutable mode temporarily to avoid peer dependency issues
+# Uses Yarn 3.2.1 from .yarn/releases/ as specified in .yarnrc.yml
 RUN yarn install --network-timeout 600000
 
 # Copy source code (including packages directory)
@@ -55,5 +55,4 @@ ENTRYPOINT ["dumb-init", "--"]
 
 # Start command
 CMD ["node", "dist/app.js"]
-
 # Start command
