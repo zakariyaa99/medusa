@@ -23,9 +23,13 @@ RUN yarn install --network-timeout 600000 --no-immutable && \
 # Copy source code (including packages directory)
 COPY . .
 
-# Build all packages except @medusajs/deps which has external dependency issues
-# Using turbo filter to skip problematic package
-RUN npx turbo run build --filter=!@medusajs/deps
+# Install turbo globally to ensure consistent version and avoid npx overhead
+# Using version from package.json (^1.6.3) for predictable behavior
+RUN npm install -g turbo@^1.6.3
+
+# Build all packages except problematic ones
+# Excluding @medusajs/deps (external dependency issues) and medusa-dev-cli (build failures)
+RUN turbo run build --filter=!@medusajs/deps --filter=!medusa-dev-cli
 
 # Production stage
 FROM node:20-alpine
@@ -58,4 +62,3 @@ ENTRYPOINT ["dumb-init", "--"]
 
 # Start command
 CMD ["node", "dist/app.js"]
-# Start command
