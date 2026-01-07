@@ -8,6 +8,10 @@ RUN corepack prepare yarn@3.2.1 --activate
 # Set working directory
 WORKDIR /app
 
+# Copy .yarn folder and config
+COPY .yarn ./.yarn
+COPY .yarnrc.yml ./
+
 # Copy package files
 COPY package.json yarn.lock ./
 
