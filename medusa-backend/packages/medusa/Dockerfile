@@ -21,8 +21,8 @@ RUN yarn install --network-timeout 600000
 # Copy source code (including packages directory)
 COPY . .
 
-# Build only the medusa package
-RUN cd packages/medusa && yarn build
+# Build all packages in correct order using turbo (medusa depends on other packages)
+RUN yarn build
 
 # Production stage
 FROM node:20-alpine
