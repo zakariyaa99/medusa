@@ -2,32 +2,30 @@
 FROM node:20-alpine AS builder
 
 # Install necessary tools
-RUN apk add --no-cache git
+RUN apk add --no-cache git python3 make g++
 
 # Set working directory
 WORKDIR /app
 
-# Copy Yarn configuration and patches (required for yarn install)
+# Copy Yarn configuration and patches
 COPY .yarn ./.yarn
 COPY .yarnrc.yml ./
 
-# Copy package files from monorepo root (build context is medusa-backend)
+# Copy package files
 COPY package.json yarn.lock ./
 
-# Install ALL dependencies (including dev dependencies needed for build)
-# Removed --production flag to keep rimraf, tsup, and other build tools
+# Install ALL dependencies
 RUN yarn install --network-timeout 600000 --no-immutable
 
-# Copy source code (including packages directory)
+# Copy source code
 COPY . .
 
-# Install turbo globally to ensure consistent version and avoid npx overhead
-# Using version from package.json (^1.6.3) for predictable behavior
+# Install turbo globally
 RUN npm install -g turbo@^1.6.3
 
-# Build all packages except problematic ones
-# Excluding @medusajs/deps (external dependency issues) and medusa-dev-cli (build failures)
-RUN turbo run build --filter=!@medusajs/deps --filter=!medusa-dev-cli
+# Build ONLY the main medusa package (skip problematic packages)
+# This will build medusa and its required dependencies automatically
+RUN cd packages/medusa && yarn build
 
 # Production stage
 FROM node:20-alpine
@@ -44,7 +42,7 @@ COPY --from=builder /app/packages/medusa/package.json ./
 
 # Copy necessary configuration files
 COPY --from=builder /app/packages/medusa/medusa-config.js ./
-COPY --from=builder /app/packages/medusa/ormconfig.json ./
+COPY --from=builder /app/packages/medusa/ormconfig.json* ./
 
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && \
